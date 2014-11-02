@@ -1,0 +1,9 @@
+*.pyc
+*.sqlite3
+
+node_modules/
+
+static/bower_components/
+
+# Generated gulp files
+dist/
