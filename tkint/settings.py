@@ -36,7 +36,9 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
     'rest_framework',
+    'authentication',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,11 +84,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
 
-STATICFILES_DIR = (
+STATICFILES_DIRS = (
     'static',
 )
 
-TEMPLATES_DIRS = (
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+TEMPLATE_DIRS = (
     'templates',
 )
